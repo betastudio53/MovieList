@@ -18,13 +18,13 @@ class Add extends React.Component {
 
     render() {
         return (
-          <div>
+          <form>
             <input
               added ={this.state.value}
               onChange = {this.handleCLickAddChange.bind(this)}
             />
-            <button>ADD!!</button>
-            </div>
+            <input value ="Add!!"/>
+          </form>
         );
     }
 }

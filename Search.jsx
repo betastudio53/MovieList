@@ -18,13 +18,13 @@ class Search extends React.Component {
 
     render() {
         return (
-          <div>
+          <form>
             <input
               value ={this.state.value}
               onChange = {this.handleCLickInputChange.bind(this)}
             />
-            <button>Go!!</button>
-            </div>
+            <input value ="Go!!"/>
+            </form>
         );
     }
 }
