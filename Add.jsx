@@ -3,27 +3,41 @@ class Add extends React.Component {
       super(props);
   
       this.state = {
-        added: ''
+        value: '',
+        //movies: this.props.movies
       };
     }
 
-    handleClickAddChange(e) {
-        this.props.handleAddMovie(e.target.value);
-        this.setState({
-          added: e.target.value
-        });
+    handleClickAddChange(e) {  
+      this.setState({
+        value: e.target.value
+      });
+      
     }
-
-
+  //   handleAddMovie(){
+  //     var newAdd = {};
+  //     newAdd.title = this.state.added;
+  //     this.setState({
+  //         movies : this.props.movies.unshift(newAdd)
+  //     })
+  // }
+    //  handleSubmit(event) {
+    //   event.preventDefault();
+    //   this.setState({
+    //     movies : this.props.movies.concat({title : this.state.value})
+    //   });
+     
+    //  }
 
     render() {
         return (
-          <form>
+          <form >
             <input
-              added ={this.state.value}
-              onChange = {this.handleCLickAddChange.bind(this)}
+              value ={this.state.value}
+              onChange = {this.handleClickAddChange.bind(this)}
             />
-            <input value ="Add!!"/>
+            <input onClick={()=>this.props.handleAddMovie(this.state.value)} value ="Add!!"/>
+            {/* <input onClick = {this.handleAddMovie.blind(this)} value ="Add!!"/> */}
           </form>
         );
     }

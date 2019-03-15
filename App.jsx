@@ -3,6 +3,7 @@ import MovieList from './MovieList.js';
 import Search from './Search.js';
 import Add from './Add.js';
 
+
 class App extends React.Component {
     constructor(props){
       super(props);
@@ -22,10 +23,14 @@ class App extends React.Component {
       })
 
     }
-
-    handleAddMovie(input){
+    // handleAddMovie(input){
+    //   var joined = this.props.movies.concat(input);
+    //   this.setState({ movies: joined })
+        
+    // }
+    handleAddMovie(newMovie){
         var newAdd = {};
-        newAdd.title = input;
+        newAdd.title = newMovie;
         this.setState({
             movies : this.props.movies.unshift(newAdd)
         })
@@ -36,7 +41,9 @@ class App extends React.Component {
         <div>
         <h2>Movie List</h2>
         <div>
-        <Add handleAddMovie ={this.handleAddMovie.bind(this)}/>
+        {/* <Add  movies ={this.state.movies}/> */}
+
+        <Add  movies ={this.state.movies} handleAddMovie ={this.handleAddMovie.bind(this)}/>
       </div>
         <div>
           <Search handleInputChange ={this.handleInputChange.bind(this)}/>

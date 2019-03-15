@@ -21,7 +21,7 @@ class Search extends React.Component {
           <form>
             <input
               value ={this.state.value}
-              onChange = {this.handleCLickInputChange.bind(this)}
+              onChange = {this.handleClickInputChange.bind(this)}
             />
             <input value ="Go!!"/>
             </form>
